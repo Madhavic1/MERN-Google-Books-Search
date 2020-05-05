@@ -11,7 +11,6 @@ import API from "../utils/API"
 function Search() {
     const [results,setResults] = useState([]);
     const handleSubmit = (bookval) => {
-        console.log(bookval)
         API.search(bookval)
         .then(res => {
             console.log(res.data.items)
