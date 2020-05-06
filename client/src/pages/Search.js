@@ -4,7 +4,7 @@ import Container from "../components/Container"
 // import Row from "../components/Row"
 import SearchForm from '../components/SearchForm'
 import SearchHeader from '../components/SearchHeader'
-import SearchResults from '../components/SearchResults'
+import SearchResults from '../components/RenderSearchedBooks'
 import API from "../utils/API"
 
 

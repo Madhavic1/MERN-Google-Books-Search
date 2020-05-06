@@ -1,6 +1,36 @@
 import React from 'react'
+import API from "../utils/API"
 
-function SearchedBook({ title,author, previewLink, image, description, descStyle }) {
+const descStyle = {
+    font_size: {
+        fontSize: "smaller"
+    }
+}
+
+function SearchedBook({ title,author, link, image, description, buttonTitle, id, loadSavedBooks }) {
+
+    const handle_Save_Delete = () => {
+        // console.log(`title = ${title},author= ${author}, previewLink= ${link}, image= ${image}, description= ${description}`);
+        console.log("buttonTitle --- "+buttonTitle);
+        if(buttonTitle === "Save"){
+            API.saveBook({
+                title,
+                authors:author,
+                description,
+                image,
+                link
+            })
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => console.log(err));
+        }else {
+            API.deleteBook(id)
+                .then(res => loadSavedBooks())
+                .catch(err => console.log(err));
+        }
+     
+    }
     return (
         <div className="mb-1 border-bottom">
             <div className="d-flex">
@@ -9,8 +39,8 @@ function SearchedBook({ title,author, previewLink, image, description, descStyle
                     <p>Written By: {author}</p>
                 </div>
                 <div className="ml-auto">
-                    <a href={previewLink}>View</a>
-                    <a>Save</a>
+                    <button onClick={() => window.location.href=link}>View</button>
+                    <button onClick={handle_Save_Delete}>{buttonTitle}</button>
                 </div>
             </div>
             <div className="d-flex">

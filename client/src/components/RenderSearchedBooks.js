@@ -1,12 +1,6 @@
 import React from 'react'
 import SearchedBook from './SearchedBook';
 
-const descStyle = {
-    font_size: {
-        fontSize: "smaller"
-    }
-}
-
 function SearchResults({ searchResults }) {
     console.log(searchResults);
     return (
@@ -17,10 +11,11 @@ function SearchResults({ searchResults }) {
                     <SearchedBook key={book.id}
                         title={book.volumeInfo.title}
                         author={book.volumeInfo.authors}
-                        previewLink={book.volumeInfo.previewLink}
+                        link={book.volumeInfo.previewLink}
                         image={book.volumeInfo.imageLinks.thumbnail}
                         description={book.volumeInfo.description} 
-                        descStyle={descStyle}/>
+                        buttonTitle="Save"
+                        />
                 ))}
             </div>
         </div>
