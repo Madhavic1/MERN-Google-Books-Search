@@ -21,6 +21,10 @@ function Search() {
             <SearchHeader />
             <SearchForm  handleSubmitevent={handleSubmit}/>
             <SearchResults searchResults={results}/>
+            {!results && 
+            <div className="container">
+                <h2>No Results Found!!</h2>    
+            </div>}
         </Container>
     )
 }
