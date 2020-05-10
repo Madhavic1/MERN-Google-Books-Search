@@ -18,7 +18,7 @@ app.use(routes);
 
 
 //connect to Mongodb
-mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/googlebooks");
+mongoose.connect(process.env.MONGODB_URL || "mongodb://user:test123@ds119091.mlab.com:19091/heroku_gqz4v0rq");
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
