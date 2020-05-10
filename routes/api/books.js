@@ -9,6 +9,9 @@ router.route("/")
     .get(booksController.findAll)
     .post(booksController.create);
 
+router.route("/:title")
+.get(booksController.findByTitle);
+
 // /api/books/:id (delete) - Will be used to delete a book from the database by Mongo _id.
 router.route("/:id")
     .delete(booksController.remove)

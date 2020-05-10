@@ -7,7 +7,9 @@ function SearchResults({ searchResults }) {
         <div className="border mt-2">
             <strong >Results </strong>
             <div className="border-bottom-0 p-2">
-                {searchResults.map(book => (
+                {searchResults.map(book =>{ 
+                    console.log(book)
+                    return (
                     <SearchedBook key={book.id}
                         title={book.volumeInfo.title}
                         author={book.volumeInfo.authors}
@@ -15,8 +17,9 @@ function SearchResults({ searchResults }) {
                         image={book.volumeInfo.imageLinks.thumbnail}
                         description={book.volumeInfo.description} 
                         buttonTitle="Save"
+                        id={book.id}
                         />
-                ))}
+                )})}
             </div>
         </div>
     )

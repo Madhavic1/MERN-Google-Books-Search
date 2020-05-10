@@ -5,7 +5,6 @@ function RenderSavedBooks({ savedBooks, loadSavedBooks }) {
     console.log(savedBooks);
     let length = savedBooks.length;
     return (
-        // { savedBooks.length}
         <div className="border mt-2">
             <strong >Saved Books </strong>
             <div className="border-bottom-0 p-2">
